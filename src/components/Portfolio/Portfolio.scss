@@ -1,0 +1,69 @@
+.app__portfolio {
+  max-width: 700px;
+  padding: 3.5rem 1.5rem;
+  margin: 0 auto;
+}
+
+.app__portfolio-isLoading {
+  width: 100%;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 2rem;
+  text-align: center;
+}
+
+.app__portfolio-tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: .5rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.app__portfolio-tag {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--light-gray);
+  padding: .5rem .8rem;
+  -webkit-border-radius: .5rem;
+  -moz-border-radius: .5rem;
+  border-radius: .5rem;
+  font-weight: bold;
+  gap: .3rem;
+  border: none;
+  outline: none;
+
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+
+  &:hover {
+    background-color: var(--main-color);
+  }
+
+  &:active {
+    background-color: var(--main-color-alt);
+  }
+
+  &.active {
+    background-color: var(--main-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: var(--font-sm);
+  }
+}
+
+.app__portfolio-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

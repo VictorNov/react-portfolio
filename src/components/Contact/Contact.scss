@@ -1,0 +1,211 @@
+.app__contact {
+  max-width: 700px;
+  padding: 3.5rem 1.5rem;
+  margin: 0 auto;
+}
+
+.app__contacts-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 1rem;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.app__contacts-block1 {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 318px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 400px) {
+    width: 100%;
+  }
+
+  .images-block-photo-1 {
+    width: 70%;
+  }
+
+  .images-block-photo-2 {
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    top: 50%;
+    width: 180px;
+    height: 180px;
+    -ms-transform: translateY(-50%) scale(-1, 1);
+    transform: translateY(-50%) scale(-1, 1);
+
+    @media screen and (max-width: 300px) {
+      width: 130px;
+      height: 130px;
+    }
+
+    img {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      right: -15px;
+      bottom: -15px;
+      width: 80%;
+      height: 80%;
+      border: 2px solid var(--gray);
+      border-left: none;
+      border-top: none;
+    }
+  }
+}
+
+.app__contacts-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 1rem;
+
+  @media screen and (max-width: 768px) {
+    align-items: center;
+  }
+
+  label {
+    width: 85%;
+
+    @media screen and (max-width: 400px) {
+      width: 100%;
+    }
+
+    div {
+      font-size: var(--font-sm);
+      margin-top: .5rem;
+      color: firebrick;
+
+      &::before{
+        content: '* ';
+      }
+    }
+  }
+
+  input,
+  textarea {
+    padding: .5rem .8rem;
+    width: 100%;
+
+    &:invalid {
+      border: 1px solid firebrick;
+    }
+  }
+
+  textarea {
+    height: 7rem;
+    resize: none;
+    overflow: auto;
+  }
+
+  button {
+    width: 85%;
+    padding: .5em .8rem;
+    border: none;
+    outline: none;
+    font: inherit;
+    font-weight: 500;
+    letter-spacing: .2em;
+    background-color: var(--gray);
+    color: var(--white);
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+
+    @media screen and (max-width: 400px) {
+      width: 100%;
+    }
+
+    &:hover {
+      background-color: var(--main-color);
+      color: var(--gray);
+    }
+
+    &:active {
+      background-color: var(--main-color-alt);
+      color: var(--gray);
+    }
+  }
+}
+
+.app__contacts-block3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+
+  h3 {
+    font-size: var(--font-lg);
+  }
+
+  a {
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    -webkit-column-gap: .5rem;
+    -moz-column-gap: .5rem;
+    column-gap: .5rem;
+    cursor: pointer;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+
+    &:hover {
+      color: var(--main-color);
+    }
+
+    &:active {
+      color: var(--main-color-alt);
+    }
+  }
+}
+
+.app__contacts-social-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+
+  a {
+    font-size: var(--font-xl);
+  }
+}
+
+.app__contacts-block4 {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    right: -15px;
+    bottom: -15px;
+    width: 70%;
+    height: 70%;
+    border: 2px solid var(--gray);
+    border-left: none;
+    border-top: none;
+  }
+}

@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500;600;700&family=Raleway:wght@400;500&display=swap');
+
+:root {
+  --white: #FFFFFF;
+  --light-gray: #CCCCCC;
+  --gray: #282828;
+  --black: #000000;
+  --main-color: rgb(241, 122, 59);
+  --main-color-alt: rgb(192, 91, 38);
+
+  --font-3xl: 4rem;
+  --font-2xl: 2.5rem;
+  --font-xl: 1.5rem;
+  --font-lg: 1.25rem;
+  --font-md: 1rem;
+  --font-sm: .85rem;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  font-family: "Montserrat Alternates", sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+h1 {font-size: var(--font-3xl);}
+h2 {font-size: var(--font-2xl);}
+h3 {font-size: var(--font-xl);}
+h4 {font-size: var(--font-lg);}
+h5 {font-size: var(--font-md);}
+h6 {font-size: var(--font-sm);}
+
+p {
+  font-size: var(--font-md);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+span {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+input,
+textarea {
+  font: inherit;
+  outline: none;
+}
