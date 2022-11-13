@@ -21,7 +21,7 @@ function App() {
       window.scrollTo(0, scrollY)
       document.body.style.scrollBehavior = 'smooth'
     }
-  }, [isToggle, scrollY])
+  }, [isToggle])
 
   const handleClick = (toggle) => {
     if (!toggle) {
