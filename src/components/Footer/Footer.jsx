@@ -17,7 +17,7 @@ const Footer = () => {
         />
 
         <p className="app__send-message-text">
-          Буду рад познакомиться!
+          Let's work together to make your next project a success.
         </p>
 
         <Link
@@ -25,17 +25,23 @@ const Footer = () => {
           className="app__send-message-link"
           onClick={() => {window.scrollTo(0, 0)}}
         >
-          Отправить сообщение
+          Send Message
         </Link>
       </div>
 
       <div className="app__footer-main">
         <div className="app__footer-info">
           <div className="app__footer-contacts">
-            <h3>Связаться со мной:</h3>
-            <a href="tel:+79995669267">
+            <h3>
+              Contact me:
+            </h3>
+            <a href="tel:+77750344636">
               <i className="ri-phone-line" />
-              +7 (999) 566-92-67
+              +7 (775) 034-46-36 (Kazakhstan)
+            </a>
+            <a href="tel:+38267841859">
+              <i className="ri-phone-line" />
+              +382 (67) 841-859 (Montenegro)
             </a>
             <a href="mailto:victornov@bk.ru">
               <i className="ri-mail-send-line" />
@@ -43,8 +49,17 @@ const Footer = () => {
             </a>
           </div>
           <div className="app__footer-social">
-            <h3>Мои соцсети:</h3>
+            <h3>
+              My social networks:
+            </h3>
             <div className="app__footer-social-links">
+              <a href="https://www.facebook.com/victor.nov.31/"
+                 className="app__header-social-link"
+                 rel="noreferrer"
+                 target="_blank"
+              >
+                <i className="ri-facebook-line" />
+              </a>
               <a href="https://www.instagram.com/victor_nov/"
                  className="app__header-social-link"
                  rel="noreferrer"
@@ -64,7 +79,7 @@ const Footer = () => {
         </div>
         <div className="app__footer-copy">
           <p>
-            &copy; Victor Nov 2022
+            &copy; Victor Novokshenov 2022
           </p>
         </div>
       </div>

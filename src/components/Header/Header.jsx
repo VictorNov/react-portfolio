@@ -37,18 +37,30 @@ const Header = ({page}) => {
       <div className="app__header-info">
         {page === 'about' && (
           <>
-            <h1 className="app__header-title">Виктор<br /> Новокшенов</h1>
-            <p className="app__header-subtitle">Junior Frontend Developer</p>
+            <h1 className="app__header-title">
+              Victor<br />
+              Novokshenov
+            </h1>
+            <p className="app__header-subtitle">
+              Frontend Developer
+            </p>
           </>
         )}
         {page === 'portfolio' && (
-          <h1 className="app__header-title">Портфолио</h1>
+          <h1 className="app__header-title">Portfolio</h1>
         )}
         {page === 'contact' && (
-          <h1 className="app__header-title">Контакты</h1>
+          <h1 className="app__header-title">Contacts</h1>
         )}
       </div>
       <div className="app__header-social">
+        <a href="https://www.facebook.com/victor.nov.31/"
+           className="app__header-social-link"
+           rel="noreferrer"
+           target="_blank"
+        >
+          <i className="ri-facebook-line" />
+        </a>
         <a href="https://www.instagram.com/victor_nov/"
            className="app__header-social-link"
            rel="noreferrer"

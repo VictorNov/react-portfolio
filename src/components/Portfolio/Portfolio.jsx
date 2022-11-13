@@ -58,7 +58,7 @@ const Portfolio = () => {
 
   return (
     <main className="app__portfolio">
-      <h2 className="section-header">Портфолио</h2>
+      <h2 className="section-header">Portfolio</h2>
       <div className="app__portfolio-tags">
         {allTags?.map(tag => (
           <button
@@ -77,15 +77,15 @@ const Portfolio = () => {
           className={null === filter ? "app__portfolio-tag active" : "app__portfolio-tag" }
           onClick={() => filterHandler(null)}
         >
-          <i className="ri-price-tag-3-line" /> Все
+          <i className="ri-price-tag-3-line" /> Show all
         </button>
       </div>
       {isLoading ? (
         <div className="app__portfolio-isLoading">
           <Rings color='#F17A3B' />
           <p>
-            Подождите<br />
-            Портфолио загружается...
+            Wait a second,<br/>
+              I'm loading the portfolio...
           </p>
         </div>
       ) : (

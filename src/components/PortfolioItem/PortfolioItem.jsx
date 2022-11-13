@@ -38,7 +38,7 @@ const PortfolioItem = ({item: {name, description, link, gitHub, image, tags}, al
             href={gitHub}
             target="_blank"
             rel="noreferrer"
-            title="Репозиторий проекта на GitHUB"
+            title="GitHUB repository"
             className="app__project-link"
           >
             <i className="ri-github-fill" />
@@ -47,10 +47,10 @@ const PortfolioItem = ({item: {name, description, link, gitHub, image, tags}, al
             href={link}
             target="_blank"
             rel="noreferrer"
-            title="Открыть проект"
+            title="Open project in new tab"
             className="app__project-link"
           >
-            Открыть <i className="ri-external-link-line" />
+            Open project <i className="ri-external-link-line" />
           </a>
         </div>
       </div>

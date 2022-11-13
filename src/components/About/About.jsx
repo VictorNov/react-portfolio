@@ -32,7 +32,7 @@ const About = () => {
 
   return (
     <section className="app__about">
-      <h2 className="section-header">Немного обо мне</h2>
+      <h2 className="section-header">About Me</h2>
       <div className="app__about-wrapper">
         <img src={aboutPhoto} alt="" className="app__about-img"/>
         <div className="app__about-text">
@@ -41,7 +41,9 @@ const About = () => {
           />
         </div>
       </div>
-      <h3>Имею опыт работы со<br /> следующими технологиями и программами:</h3>
+      <h3>
+          I have experience with the following technologies:
+      </h3>
       <div className="app__about-skills">
         {skills.map((skill, i) => (
           <div className="app__about-skill" key={i}>

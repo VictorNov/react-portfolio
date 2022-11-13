@@ -10,12 +10,23 @@ const randomImage2 = 'https://source.unsplash.com/350x250/?architecture,urban'
 const Contact = () => {
   return (
     <main className="app__contact">
-      <h2 className="section-header">Контакты</h2>
+      <h2 className="section-header">Contact me</h2>
       <div className="app__contacts-wrapper">
         <div className="app__contacts-block1">
-          <img src={randomImage} alt="" className="images-block-photo-1"/>
+          <img
+              src={randomImage}
+              alt=""
+              className="images-block-photo-1"
+              width={222}
+              height={259}
+          />
           <span className="images-block-photo-2">
-            <img src={photo} alt="" />
+            <img
+                src={photo}
+                alt=""
+                width={180}
+                height={180}
+            />
           </span>
         </div>
         <div className="app__contacts-block2">
@@ -24,21 +35,21 @@ const Contact = () => {
             validate={values => {
               const errors = {};
               if (!values.name) {
-                errors.name = 'Обязательное поле';
+                errors.name = 'Required field';
               } else if (
                 !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
               ) {
-                errors.email = 'Некорректный адрес электронной почты';
+                errors.email = 'Incorrect email address';
               } else if (!values.email) {
-                errors.email = 'Обязательное поле';
+                errors.email = 'Required field';
               } else if (!values.message) {
-                errors.message = 'Обязательное поле';
+                errors.message = 'Required field';
               }
               return errors;
             }}
             onSubmit={(values, { setSubmitting }) => {
               setTimeout(() => {
-                alert(JSON.stringify(values, null, 2));
+                //alert(JSON.stringify(values, null, 2));
                 setSubmitting(false);
               }, 400);
             }}
@@ -46,7 +57,7 @@ const Contact = () => {
             {({ isSubmitting }) => (
               <Form className="app__contacts-form">
                 <label htmlFor="name">
-                  <Field type="text" id="name" name="name" placeholder="Имя" required />
+                  <Field type="text" id="name" name="name" placeholder="Name" required />
                   <ErrorMessage name="name" component="div" />
                 </label>
 
@@ -56,32 +67,41 @@ const Contact = () => {
                 </label>
 
                 <label htmlFor="name">
-                  <Field type="tel" id="phone" name="phone" placeholder="Телефон" />
+                  <Field type="tel" id="phone" name="phone" placeholder="Phone" />
                 </label>
 
                 <label htmlFor="message">
-                  <Field as="textarea" id="message" name="message" placeholder="Сообщение" required />
+                  <Field as="textarea" id="message" name="message" placeholder="Message" required />
                   <ErrorMessage name="message" component="div" />
                 </label>
 
                 <button type="submit" disabled={isSubmitting}>
-                  Отправить
+                  Send message
                 </button>
               </Form>
             )}
           </Formik>
         </div>
         <div className="app__contacts-block3">
-          <h3>Свяжитесь со мной любым удобным способом</h3>
-          <a href="tel:+79995669267">
+          <h3>
+            Or contact me any other way:
+          </h3>
+          <a href="tel:+38267841859">
             <i className="ri-phone-line" />
-            +7 (999) 566-92-67
+            +382 (67) 841-859 (Montenegro)
           </a>
           <a href="mailto:victornov@bk.ru">
             <i className="ri-mail-send-line" />
             victornov@bk.ru
           </a>
           <div className="app__contacts-social-links">
+            <a href="https://www.facebook.com/victor.nov.31/"
+               className="app__header-social-link"
+               rel="noreferrer"
+               target="_blank"
+            >
+              <i className="ri-facebook-line" />
+            </a>
             <a href="https://www.instagram.com/victor_nov/"
                className="app__header-social-link"
                rel="noreferrer"
@@ -99,7 +119,12 @@ const Contact = () => {
           </div>
         </div>
         <div className="app__contacts-block4">
-          <img src={randomImage2} alt=""/>
+          <img
+              src={randomImage2}
+              alt=""
+              width={318}
+              height={227}
+          />
         </div>
       </div>
     </main>

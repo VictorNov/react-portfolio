@@ -14,7 +14,7 @@ const MobileMenu = ({isToggle, handleClick}) => {
             key='home'
             onClick={() => handleClick(false)}
           >
-            Главная
+            Home
           </Link>
         </li>
         <li>
@@ -24,7 +24,7 @@ const MobileMenu = ({isToggle, handleClick}) => {
             key='portfolio'
             onClick={() => handleClick(false)}
           >
-            Портфолио
+            Portfolio
           </Link>
         </li>
         <li>
@@ -34,7 +34,7 @@ const MobileMenu = ({isToggle, handleClick}) => {
             key='contact'
             onClick={() => handleClick(false)}
           >
-            Контакты
+            Contact me
           </Link>
         </li>
       </ul>
