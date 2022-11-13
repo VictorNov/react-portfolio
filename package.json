@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@fontawesome/react-fontawesome": "^0.1.18",
+    "@fortawesome/react-fontawesome": "^0.1.18",
     "@portabletext/react": "^1.0.6",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^3.3.0",
