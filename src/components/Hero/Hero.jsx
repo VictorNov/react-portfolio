@@ -6,7 +6,9 @@ import photo from '../../assets/img/hero-photo.png';
 
 const Hero = ({ page, socialLinks }) => {
     const [ vantaEffect, setVantaEffect ] = useState(0);
+    const [ vantaEffect2, setVantaEffect2 ] = useState(0);
     const backgroundAnimation = useRef(null);
+    const backgroundAnimation2 = useRef(null);
 
     useEffect(() => {
         if ( !vantaEffect ) {
@@ -30,6 +32,31 @@ const Hero = ({ page, socialLinks }) => {
             if ( vantaEffect ) vantaEffect.destroy();
         };
     }, [ vantaEffect ]);
+
+    useEffect(() => {
+        if ( !vantaEffect2 ) {
+            setVantaEffect2(BIRDS({
+                el: backgroundAnimation2.current,
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                birdSize: 4.00,
+                wingSpan: 40.00,
+                color1: 0x275055,
+                color2: 0x010404,
+                quantity: 2.00,
+                colorMode: 'lerpGradient',
+                backgroundAlpha: 0.00
+            }));
+        }
+        return () => {
+            if ( vantaEffect2 ) vantaEffect2.destroy();
+        };
+    }, [ vantaEffect2 ]);
 
     return (
         <header className="app__header">
@@ -75,6 +102,10 @@ const Hero = ({ page, socialLinks }) => {
                     </a>
                 ))}
             </div>
+            <div
+                ref={backgroundAnimation2}
+                className="app__header-birds"
+            />
         </header>
     );
 };
