@@ -48,22 +48,22 @@ const Contact = () => {
                             }
                             return errors;
                         }}
-                        onSubmit={(values, { setSubmitting, setStatus }) => {
-                            axios.post('https://raw.githubusercontent.com/VictorNov/react-portfolio/master/src/api/mail.php', values)
-                                .then(() => {
-                                    setSubmitting(false);
-                                    setStatus({ success: true });
-                                })
-                                .catch(() => {
-                                    setSubmitting(false);
-                                    setStatus({ success: false });
-                                });
-                        }}
+                        // onSubmit={(values, { setSubmitting, setStatus }) => {
+                        //     axios.post('https://raw.githubusercontent.com/VictorNov/react-portfolio/master/src/api/mail.php', values)
+                        //         .then(() => {
+                        //             setSubmitting(false);
+                        //             setStatus({ success: true });
+                        //         })
+                        //         .catch(() => {
+                        //             setSubmitting(false);
+                        //             setStatus({ success: false });
+                        //         });
+                        // }}
                     >
                         {({ isSubmitting, status }) => (
                             <>
                                 { !status ? (
-                                    <Form className="app__contacts-form">
+                                    <Form className="app__contacts-form" name="contact" method="POST" data-netlify="true">
                                         <label htmlFor="name">
                                             <Field type="text" id="name" name="name" placeholder="Name"
                                                    required/>
