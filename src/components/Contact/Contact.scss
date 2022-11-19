@@ -144,6 +144,20 @@
       background-color: var(--main-color-alt);
       color: var(--gray);
     }
+
+    &:disabled {
+      pointer-events: none;
+      opacity: .4;
+    }
+  }
+
+  &--success {
+    text-align: center;
+  }
+
+  &--error {
+    text-align: center;
+    color: var(--main-color);
   }
 }
 

@@ -28,6 +28,7 @@ const PortfolioItem = ({item: {name, description, link, gitHub, image, tags}, al
               className="app__project-tag"
               key={i}
               onClick={() => filterHandler(findTag(tag._ref)?.name)}
+              aria-label={`Filter by ${findTag(tag._ref)?.name}`}
             >
               <i className="ri-price-tag-3-line" /> {findTag(tag._ref)?.name}
             </button>
