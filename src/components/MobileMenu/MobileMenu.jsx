@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import './MobileMenu.scss'
 
-const MobileMenu = ({isToggle, handleClick}) => {
+const MobileMenu = ({isToggle, handleMenuLinkClick}) => {
   return (
     <nav className={`app__mobile-menu${isToggle ? ' toggle' : ''}`}>
       <ul className="app__mobile-menu-links">
@@ -12,7 +12,7 @@ const MobileMenu = ({isToggle, handleClick}) => {
             to={'/'}
             className='app__mobile-menu-link'
             key='home'
-            onClick={() => handleClick(false)}
+            onClick={() => handleMenuLinkClick(false)}
           >
             Home
           </Link>
@@ -22,7 +22,7 @@ const MobileMenu = ({isToggle, handleClick}) => {
             to={'/portfolio'}
             className='app__mobile-menu-link'
             key='portfolio'
-            onClick={() => handleClick(false)}
+            onClick={() => handleMenuLinkClick(false)}
           >
             Portfolio
           </Link>
@@ -32,7 +32,7 @@ const MobileMenu = ({isToggle, handleClick}) => {
             to={'/contact'}
             className='app__mobile-menu-link'
             key='contact'
-            onClick={() => handleClick(false)}
+            onClick={() => handleMenuLinkClick(false)}
           >
             Contact me
           </Link>

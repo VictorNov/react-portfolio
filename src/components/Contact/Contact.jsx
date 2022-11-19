@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 import './Contact.scss';
@@ -17,7 +16,7 @@ const Contact = () => {
             )
             .join("&");
     }
-    
+
     return (
         <main className="app__contact">
             <h2 className="section-header">Contact me</h2>
