@@ -9,6 +9,15 @@ const randomImage = 'https://source.unsplash.com/300x350/?interior';
 const randomImage2 = 'https://source.unsplash.com/350x250/?architecture,urban';
 
 const Contact = () => {
+    function encode(data) {
+        return Object.keys(data)
+            .map(
+                (key) =>
+                    encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+            )
+            .join("&");
+    }
+    
     return (
         <main className="app__contact">
             <h2 className="section-header">Contact me</h2>
