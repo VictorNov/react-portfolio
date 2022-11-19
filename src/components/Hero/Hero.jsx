@@ -1,83 +1,82 @@
-import React, { useEffect, useState, useRef } from 'react'
-import BIRDS from 'vanta/dist/vanta.birds.min'
+import React, { useEffect, useState, useRef } from 'react';
+import BIRDS from 'vanta/dist/vanta.birds.min';
 
-import './Hero.scss'
-import photo from '../../assets/img/hero-photo.png'
+import './Hero.scss';
+import photo from '../../assets/img/hero-photo.png';
 
-const Hero = ({page}) => {
-  const [vantaEffect, setVantaEffect] = useState(0)
-  const myRef = useRef(null)
-  useEffect(() => {
-    if (!vantaEffect) {
-      setVantaEffect(BIRDS({
-        el: myRef.current,
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
-        color1: 0x275055,
-        color2: 0x010404,
-        quantity: 3.00,
-        colorMode: "lerpGradient",
-        backgroundAlpha: 0.00
-      }))
-    }
-    return () => {
-      if (vantaEffect) vantaEffect.destroy()
-    }
-  }, [vantaEffect])
+const Hero = ({ page, socialLinks }) => {
+    const [ vantaEffect, setVantaEffect ] = useState(0);
+    const backgroundAnimation = useRef(null);
 
-  return (
-    <header className="app__header">
-      <div ref={myRef} className="app__header-birds" />
-      <img src={photo} alt="Виктор" className='app__header-img'/>
-      <div className="app__header-info">
-        {page === 'about' && (
-          <>
-            <h1 className="app__header-title">
-              Victor<br />
-              Novokshenov
-            </h1>
-            <p className="app__header-subtitle">
-              Frontend Developer
-            </p>
-          </>
-        )}
-        {page === 'portfolio' && (
-          <h1 className="app__header-title">Portfolio</h1>
-        )}
-        {page === 'contact' && (
-          <h1 className="app__header-title">Contacts</h1>
-        )}
-      </div>
-      <div className="app__header-social">
-        <a href="https://www.facebook.com/victor.nov.31/"
-           className="app__header-social-link"
-           rel="noreferrer"
-           target="_blank"
-        >
-          <i className="ri-facebook-line" />
-        </a>
-        <a href="https://www.instagram.com/victor_nov/"
-           className="app__header-social-link"
-           rel="noreferrer"
-           target="_blank"
-        >
-          <i className="ri-instagram-line" />
-        </a>
-        <a href="https://github.com/VictorNov"
-           className="app__header-social-link"
-           rel="noreferrer"
-           target="_blank"
-        >
-          <i className="ri-github-fill" />
-        </a>
-      </div>
-    </header>
-  )
-}
+    useEffect(() => {
+        if ( !vantaEffect ) {
+            setVantaEffect(BIRDS({
+                el: backgroundAnimation.current,
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color1: 0x275055,
+                color2: 0x010404,
+                quantity: 3.00,
+                colorMode: 'lerpGradient',
+                backgroundAlpha: 0.00
+            }));
+        }
+        return () => {
+            if ( vantaEffect ) vantaEffect.destroy();
+        };
+    }, [ vantaEffect ]);
 
-export default Hero
+    return (
+        <header className="app__header">
+            <div
+                ref={backgroundAnimation}
+                className="app__header-birds"
+            />
+            <img
+                src={photo}
+                alt="Victor Novokshenov"
+                className="app__header-img"
+            />
+            <div className="app__header-info">
+                {page === '/' && (
+                    <>
+                        <h1 className="app__header-title">
+                            Victor<br/>
+                            Novokshenov
+                        </h1>
+                        <p className="app__header-subtitle">
+                            Frontend Developer
+                        </p>
+                    </>
+                )}
+                {page === '/portfolio' && (
+                    <h1 className="app__header-title">Portfolio</h1>
+                )}
+                {page === '/contact' && (
+                    <h1 className="app__header-title">Contact me</h1>
+                )}
+            </div>
+            <div className="app__header-social">
+                {socialLinks.map((link, index) => (
+                    <a
+                        className="app__header-social-link"
+                        key={`hero-social-link-${index}`}
+                        href={link.url}
+                        rel="noreferrer"
+                        target="_blank"
+                        title={link.name}
+                    >
+                        <i className={link.icon}/>
+                    </a>
+                ))}
+            </div>
+        </header>
+    );
+};
+
+export default Hero;

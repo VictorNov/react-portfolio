@@ -1,45 +1,30 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import './MobileMenu.scss'
+import './MobileMenu.scss';
 
-const MobileMenu = ({isToggle, handleMenuLinkClick}) => {
-  return (
-    <nav className={`app__mobile-menu${isToggle ? ' toggle' : ''}`}>
-      <ul className="app__mobile-menu-links">
-        <li>
-          <Link
-            to={'/'}
-            className='app__mobile-menu-link'
-            key='home'
-            onClick={() => handleMenuLinkClick(false)}
-          >
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link
-            to={'/portfolio'}
-            className='app__mobile-menu-link'
-            key='portfolio'
-            onClick={() => handleMenuLinkClick(false)}
-          >
-            Portfolio
-          </Link>
-        </li>
-        <li>
-          <Link
-            to={'/contact'}
-            className='app__mobile-menu-link'
-            key='contact'
-            onClick={() => handleMenuLinkClick(false)}
-          >
-            Contact me
-          </Link>
-        </li>
-      </ul>
-    </nav>
-  )
-}
+const MobileMenu = ({
+                        isToggle,
+                        handleMenuLinkClick,
+                        navLinks,
+                    }) => {
+    return (
+        <nav className={`app__mobile-menu${isToggle ? ' toggle' : ''}`}>
+            <ul className="app__mobile-menu-links">
+                {navLinks.map((link) => (
+                    <li key={`MobileMenu-${link.label}`}>
+                        <Link
+                            to={link.to}
+                            className="app__mobile-menu-link"
+                            onClick={() => handleMenuLinkClick()}
+                        >
+                            {link.label}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    );
+};
 
-export default MobileMenu
+export default MobileMenu;
