@@ -4,7 +4,7 @@
   --white: #FFFFFF;
   --light-gray: #CCCCCC;
   --gray: #282828;
-  --black: #000000;
+  --black: #121212;
   --main-color: rgb(241, 122, 59);
   --main-color-alt: rgb(192, 91, 38);
 
@@ -17,8 +17,6 @@
 }
 
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -40,9 +38,6 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   font-family: "Montserrat Alternates", sans-serif;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -55,16 +50,10 @@ h6 {font-size: var(--font-sm);}
 
 p {
   font-size: var(--font-md);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
 span {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -74,6 +63,23 @@ ul, ol {
 
 a {
   text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  position: relative;
+  outline: none;
+
+  &::after {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    bottom: -3px;
+    left: -3px;
+    content: '';
+    border-radius: 3px;
+    box-shadow: 0 0 0 2px var(--main-color), 0 0 0 4px var(--white);
+  }
 }
 
 img {
@@ -86,4 +92,9 @@ input,
 textarea {
   font: inherit;
   outline: none;
+
+  :focus,
+  :focus-visible {
+    border: 2px solid var(--main-color);
+  }
 }

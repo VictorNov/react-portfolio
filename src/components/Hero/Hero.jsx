@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react'
 import BIRDS from 'vanta/dist/vanta.birds.min'
 
-import './Header.scss'
-import photo from '../../assets/img/header-photo.png'
+import './Hero.scss'
+import photo from '../../assets/img/hero-photo.png'
 
-const Header = ({page}) => {
+const Hero = ({page}) => {
   const [vantaEffect, setVantaEffect] = useState(0)
   const myRef = useRef(null)
   useEffect(() => {
@@ -80,4 +80,4 @@ const Header = ({page}) => {
   )
 }
 
-export default Header
+export default Hero

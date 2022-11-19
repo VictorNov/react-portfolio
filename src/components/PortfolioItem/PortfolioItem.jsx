@@ -24,13 +24,13 @@ const PortfolioItem = ({item: {name, description, link, gitHub, image, tags}, al
         <div className="app__project-tags">
           {}
           {tags?.map((tag, i) => (
-            <span
+            <button
               className="app__project-tag"
               key={i}
               onClick={() => filterHandler(findTag(tag._ref)?.name)}
             >
               <i className="ri-price-tag-3-line" /> {findTag(tag._ref)?.name}
-            </span>
+            </button>
           ))}
         </div>
         <div className="app__project-links">

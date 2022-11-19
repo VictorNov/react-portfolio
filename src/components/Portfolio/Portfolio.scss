@@ -31,22 +31,25 @@
   flex-direction: row;
   background-color: var(--light-gray);
   padding: .5rem .8rem;
-  -webkit-border-radius: .5rem;
-  -moz-border-radius: .5rem;
   border-radius: .5rem;
   font-weight: bold;
   gap: .3rem;
   border: none;
   outline: none;
 
-  -webkit-transition: all .3s;
-  -moz-transition: all .3s;
-  -ms-transition: all .3s;
-  -o-transition: all .3s;
   transition: all .3s;
 
   &:hover {
     background-color: var(--main-color);
+  }
+
+  &:focus-visible {
+    background-color: var(--main-color);
+    box-shadow: 0 0 0 2px var(--black);
+
+    &::after {
+      display: none;
+    }
   }
 
   &:active {
