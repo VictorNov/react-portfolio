@@ -49,7 +49,7 @@ const Contact = () => {
                             return errors;
                         }}
                         onSubmit={(values, { setSubmitting, setStatus }) => {
-                            axios.post('api/mail.php', values)
+                            axios.post('https://raw.githubusercontent.com/VictorNov/react-portfolio/master/public/api/mail.php', values)
                                 .then(() => {
                                     setSubmitting(false);
                                     setStatus({ success: true });
