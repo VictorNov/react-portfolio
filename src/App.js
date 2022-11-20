@@ -127,7 +127,10 @@ function App() {
                     <Portfolio/>
                 )}/>
                 <Route path="/contact" element={(
-                    <Contact/>
+                    <Contact
+                        socialLinks={SOCIAL_LINKS}
+                        contacts={CONTACTS}
+                    />
                 )}/>
                 <Route path="*" element={(
                     <div>404</div>

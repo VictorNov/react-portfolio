@@ -93,7 +93,7 @@ const Hero = ({ page, socialLinks }) => {
                     <a
                         className="app__hero-social-link"
                         key={`hero-social-link-${index}`}
-                        href={link.url}
+                        href={link.link}
                         rel="noreferrer"
                         target="_blank"
                         title={link.name}

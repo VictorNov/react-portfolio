@@ -7,14 +7,14 @@ import photo from '../../assets/img/about-photo.png';
 const randomImage = 'https://source.unsplash.com/300x350/?interior';
 const randomImage2 = 'https://source.unsplash.com/350x250/?architecture,urban';
 
-const Contact = () => {
+const Contact = ({ socialLinks, contacts }) => {
     function encode(data) {
         return Object.keys(data)
             .map(
                 (key) =>
-                    encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+                    encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
             )
-            .join("&");
+            .join('&');
     }
 
     return (
@@ -28,13 +28,15 @@ const Contact = () => {
                         className="images-block-photo-1"
                         width={222}
                         height={259}
+                        aria-roledescription="decorative"
                     />
                     <span className="images-block-photo-2">
                         <img
                             src={photo}
-                            alt=""
+                            alt="Victor Novokshenov"
                             width={180}
                             height={180}
+                            aria-label="Victor Novokshenov"
                         />
                       </span>
                 </div>
@@ -57,10 +59,10 @@ const Contact = () => {
                             return errors;
                         }}
                         onSubmit={(values, { setSubmitting, setStatus }) => {
-                            fetch("/", {
-                                method: "POST",
-                                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                                body: encode({ "form-name": "contact", ...values })
+                            fetch('/', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                                body: encode({ 'form-name': 'contact', ...values })
                             })
                                 .then(() => {
                                     setSubmitting(false);
@@ -74,24 +76,27 @@ const Contact = () => {
                     >
                         {({ isSubmitting, status }) => (
                             <>
-                                { !status ? (
+                                {!status ? (
                                     <Form className="app__contacts-form">
-                                        <input type="hidden" name="form-name" value="contact" />
+                                        <input type="hidden" name="form-name" value="contact"/>
 
                                         <label htmlFor="name">
-                                            <Field type="text" id="name" name="name" placeholder="Name"
+                                            <Field type="text" id="name" name="name"
+                                                   placeholder="Name"
                                                    required/>
                                             <ErrorMessage name="name" component="div"/>
                                         </label>
 
                                         <label htmlFor="email">
-                                            <Field type="email" id="email" name="email" placeholder="Email"
+                                            <Field type="email" id="email" name="email"
+                                                   placeholder="Email"
                                                    required/>
                                             <ErrorMessage name="email" component="div"/>
                                         </label>
 
                                         <label htmlFor="phone">
-                                            <Field type="tel" id="phone" name="phone" placeholder="Phone"/>
+                                            <Field type="tel" id="phone" name="phone"
+                                                   placeholder="Phone"/>
                                         </label>
 
                                         <label htmlFor="message">
@@ -106,13 +111,14 @@ const Contact = () => {
                                     </Form>
                                 ) : (
                                     <>
-                                        { status.success ? (
+                                        {status.success ? (
                                             <div className="app__contacts-form--success">
                                                 <h3>Thank you for your message!</h3>
                                             </div>
                                         ) : (
                                             <div className="app__contacts-form--error">
-                                                <h3>Something went wrong. Please try again later.</h3>
+                                                <h3>Something went wrong. Please try again
+                                                    later.</h3>
                                             </div>
                                         )}
                                     </>
@@ -125,37 +131,37 @@ const Contact = () => {
                     <h3>
                         Or contact me any other way:
                     </h3>
-                    <a href="tel:+38267841859">
-                        <i className="ri-phone-line"/>
-                        +382 (67) 841-859 (Montenegro)
-                    </a>
-                    <a href="mailto:victornov@bk.ru">
-                        <i className="ri-mail-send-line"/>
-                        victornov@bk.ru
-                    </a>
-                    <div className="app__contacts-social-links">
-                        <a href="https://www.facebook.com/victor.nov.31/"
-                           className="app__header-social-link"
-                           rel="noreferrer"
-                           target="_blank"
-                        >
-                            <i className="ri-facebook-line"/>
-                        </a>
-                        <a href="https://www.instagram.com/victor_nov/"
-                           className="app__header-social-link"
-                           rel="noreferrer"
-                           target="_blank"
-                        >
-                            <i className="ri-instagram-line"/>
-                        </a>
-                        <a href="https://github.com/VictorNov"
-                           className="app__header-social-link"
-                           rel="noreferrer"
-                           target="_blank"
-                        >
-                            <i className="ri-github-fill"/>
-                        </a>
-                    </div>
+                    <ul className="app__contacts-list">
+                        {contacts.map((contact, index) => (
+                            <li key={`contact-page-link-${index}`}>
+                                <a
+                                    className="app__contacts-link"
+                                    href={contact.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={contact.title}
+                                >
+                                    <i className={contact.icon}/>
+                                    {contact.title}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                    <ul className="app__contacts-social-links">
+                        {socialLinks.map((socialLink, index) => (
+                            <li key={`contact-page-social-link-${index}`}>
+                                <a
+                                    className="app__contacts-social-link"
+                                    href={socialLink.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={socialLink.name}
+                                >
+                                    <i className={socialLink.icon}/>
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
                 <div className="app__contacts-block4">
                     <img
@@ -163,6 +169,7 @@ const Contact = () => {
                         alt=""
                         width={318}
                         height={227}
+                        aria-roledescription="decorative"
                     />
                 </div>
             </div>
