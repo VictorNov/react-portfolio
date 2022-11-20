@@ -2,11 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './Footer.scss';
+import { IContact, ISocialLink } from "../../types";
 
 const randomImage = 'https://source.unsplash.com/1600x400/?technology';
 const randomImageMobile = 'https://source.unsplash.com/768x500/?technology';
 
-const Footer = ({
+interface FooterProps {
+    contacts: IContact[];
+    socialLinks: ISocialLink[];
+    page: string;
+}
+
+export const Footer: React.FC<FooterProps> = ({
                     contacts,
                     page,
                     socialLinks,
@@ -88,5 +95,3 @@ const Footer = ({
         </footer>
     );
 };
-
-export default Footer;

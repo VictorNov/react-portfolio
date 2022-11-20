@@ -3,13 +3,27 @@ import { PortableText } from '@portabletext/react';
 
 import './PortfolioItem.scss';
 import { urlFor } from '../../client';
+import { IProject, ITag } from '../../types';
 
-const PortfolioItem = ({
-                           item: { name, description, link, gitHub, image, tags },
+interface PortfolioItemProps {
+    item: IProject;
+    allTags: ITag[];
+    filterHandler: (tag: string) => void;
+}
+
+export const PortfolioItem: React.FC<PortfolioItemProps> = ({
+                           item: {
+                               name,
+                               description,
+                               link,
+                               gitHub,
+                               image,
+                               tags,
+                           },
                            allTags,
                            filterHandler
                        }) => {
-    function findTag(ref) {
+    function findTag(ref: string): ITag | undefined {
         return allTags.find(item => item._id === ref);
     }
 
@@ -35,7 +49,7 @@ const PortfolioItem = ({
                         <button
                             className="portfolio-item__tag"
                             key={`project-tag-${i}`}
-                            onClick={() => filterHandler(findTag(tag._ref)?.name)}
+                            onClick={() => filterHandler(findTag(tag._ref)?.name || '')}
                             aria-label={`Filter by ${findTag(tag._ref)?.name}`}
                         >
                             <i className="ri-price-tag-3-line"/> {findTag(tag._ref)?.name}
@@ -72,5 +86,3 @@ const PortfolioItem = ({
         </div>
     );
 };
-
-export default PortfolioItem;

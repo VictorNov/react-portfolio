@@ -2,8 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './MobileMenu.scss';
+import { INavLink } from "../../types";
 
-const MobileMenu = ({
+interface MobileMenuProps {
+    navLinks: INavLink[];
+    isToggle: boolean;
+    handleMenuLinkClick: () => void;
+}
+
+export const MobileMenu: React.FC<MobileMenuProps> = ({
                         isToggle,
                         handleMenuLinkClick,
                         navLinks,
@@ -26,5 +33,3 @@ const MobileMenu = ({
         </nav>
     );
 };
-
-export default MobileMenu;

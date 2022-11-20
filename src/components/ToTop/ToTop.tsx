@@ -1,7 +1,7 @@
 import React from 'react';
 import './ToTop.scss';
 
-const ToTop = () => {
+export const ToTop: React.FC = () => {
     return (
         <button
             className="to-top"
@@ -14,5 +14,3 @@ const ToTop = () => {
         </button>
     );
 };
-
-export default ToTop;

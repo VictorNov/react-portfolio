@@ -5,12 +5,18 @@
   "dependencies": {
     "@fortawesome/react-fontawesome": "^0.1.18",
     "@portabletext/react": "^1.0.6",
+    "@portabletext/types": "^2.0.0",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^3.3.0",
     "@sanity/image-url": "^1.0.1",
+    "@sanity/types": "^2.35.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^29.2.3",
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
     "formik": "^2.2.9",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -20,6 +26,7 @@
     "sass": "^1.50.1",
     "scroll-lock": "^2.1.5",
     "three": "^0.139.2",
+    "typescript": "^4.9.3",
     "vanta": "^0.5.22",
     "web-vitals": "^2.1.4"
   },
@@ -46,5 +53,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/scroll-lock": "^2.1.0"
   }
 }

@@ -72,7 +72,7 @@ const CONTACTS = [
     },
 ];
 
-function App() {
+export const App = (): JSX.Element => {
     const [ isScroll, setIsScroll ] = useState(false);
     const [ isToggle, setIsToggle ] = useState(false);
     const location = useLocation();
@@ -146,5 +146,3 @@ function App() {
         </div>
     );
 }
-
-export default App;

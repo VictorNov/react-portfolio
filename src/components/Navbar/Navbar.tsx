@@ -2,8 +2,17 @@ import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
 import './Navbar.scss';
+import { INavLink } from "../../types";
 
-const Navbar = ({
+interface NavbarProps {
+    navLinks: INavLink[];
+    scroll: boolean;
+    isToggle: boolean;
+    setIsToggle: (value: boolean) => void;
+    handleMenuLinkClick: () => void;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({
                     scroll,
                     isToggle,
                     setIsToggle,
@@ -58,5 +67,3 @@ const Navbar = ({
         </nav>
     );
 };
-
-export default Navbar;

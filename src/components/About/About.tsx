@@ -5,7 +5,9 @@ import { client, urlFor } from '../../client';
 import aboutPhoto from '../../assets/img/about-photo.png';
 import './About.scss';
 
-const About = () => {
+import { ISkill } from '../../types';
+
+export const About: React.FC = () => {
     const [ textBlocks, setTextBlocks ] = useState([]);
     const [ skills, setSkills ] = useState([]);
 
@@ -25,7 +27,7 @@ const About = () => {
         let query = '*[_type == "skills"]';
 
         client.fetch(query)
-            .then(data => {
+            .then((data) => {
                 setSkills(data);
             });
     }, []);
@@ -49,7 +51,7 @@ const About = () => {
                 I have experience with the following technologies:
             </h3>
             <ul className="about__skills">
-                {skills.map((skill, i) => (
+                {skills.map((skill: ISkill, i) => (
                     <li
                         className="about__skill"
                         key={`skill-${i}`}
@@ -67,5 +69,3 @@ const About = () => {
         </section>
     );
 };
-
-export default About;

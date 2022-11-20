@@ -4,12 +4,13 @@ import { Rings } from 'react-loader-spinner';
 import { PortfolioItem } from '../components';
 import './Portfolio.scss';
 import { client } from '../../client';
+import { ITag, IProject } from '../../types';
 
-const Portfolio = () => {
+export const Portfolio: React.FC = () => {
     const [ isLoading, setIsLoading ] = useState(true);
     const [ allTags, setAllTags ] = useState([]);
     const [ portfolioItems, setPortfolioItems ] = useState([]);
-    const [ filter, setFilter ] = useState(null);
+    const [ filter, setFilter ] = useState('');
 
     useEffect(() => {
         const tagsQuery = '*[_type == "tag"]';
@@ -52,7 +53,7 @@ const Portfolio = () => {
         }
     }, [ filter ]);
 
-    const filterHandler = (filter) => {
+    const filterHandler = (filter: string) => {
         setFilter(filter);
     };
 
@@ -60,7 +61,7 @@ const Portfolio = () => {
         <main className="portfolio">
             <h2 className="section-header">Portfolio</h2>
             <div className="portfolio__tags">
-                {allTags?.map(tag => (
+                {allTags?.map((tag: ITag) => (
                     <button
                         className={`portfolio__tag ${filter === tag.name ? 'portfolio__tag--active' : ''}`}
                         key={`all-tags-${tag?.name}`}
@@ -73,7 +74,7 @@ const Portfolio = () => {
                 ))}
                 <button
                     className={`portfolio__tag ${filter === null ? 'portfolio__tag--active' : ''}`}
-                    onClick={() => filterHandler(null)}
+                    onClick={() => filterHandler('')}
                 >
                     <i className="ri-price-tag-3-line"/> Show all
                 </button>
@@ -89,7 +90,7 @@ const Portfolio = () => {
             ) : (
                 <>
                     <div className="portfolio__items">
-                        {portfolioItems?.map((item) => (
+                        {portfolioItems?.map((item: IProject) => (
                             <PortfolioItem
                                 key={item.name}
                                 item={item}
@@ -103,5 +104,3 @@ const Portfolio = () => {
         </main>
     );
 };
-
-export default Portfolio;

@@ -1,12 +1,19 @@
 import React, { useEffect, useState, useRef } from 'react';
+// @ts-ignore
 import BIRDS from 'vanta/dist/vanta.birds.min';
 
 import './Hero.scss';
+import { ISocialLink } from "../../types";
 import photo from '../../assets/img/hero-photo.png';
 
-const Hero = ({ page, socialLinks }) => {
-    const [ vantaEffect, setVantaEffect ] = useState(0);
-    const [ vantaEffect2, setVantaEffect2 ] = useState(0);
+interface HeroProps {
+    socialLinks: ISocialLink[];
+    page: string;
+}
+
+export const Hero: React.FC<HeroProps> = ({ page, socialLinks }) => {
+    const [ vantaEffect, setVantaEffect ] = useState(null);
+    const [ vantaEffect2, setVantaEffect2 ] = useState(null);
     const backgroundAnimation = useRef(null);
     const backgroundAnimation2 = useRef(null);
 
@@ -29,7 +36,10 @@ const Hero = ({ page, socialLinks }) => {
             }));
         }
         return () => {
-            if ( vantaEffect ) vantaEffect.destroy();
+            if ( vantaEffect ) {
+                // @ts-ignore
+                vantaEffect.destroy();
+            }
         };
     }, [ vantaEffect ]);
 
@@ -54,7 +64,10 @@ const Hero = ({ page, socialLinks }) => {
             }));
         }
         return () => {
-            if ( vantaEffect2 ) vantaEffect2.destroy();
+            if ( vantaEffect2 ) {
+                // @ts-ignore
+                vantaEffect2.destroy();
+            }
         };
     }, [ vantaEffect2 ]);
 
@@ -70,7 +83,7 @@ const Hero = ({ page, socialLinks }) => {
                 className="hero__img"
             />
             <div className="hero__info">
-                {page === '/' && (
+                {(page === '/' && (
                     <>
                         <h1 className="hero__title">
                             Victor<br/>
@@ -80,11 +93,11 @@ const Hero = ({ page, socialLinks }) => {
                             Frontend Developer
                         </p>
                     </>
-                ) || page === '/portfolio' && (
+                )) || (page === '/portfolio' && (
                     <h1 className="hero__title">Portfolio</h1>
-                ) || page === '/contact' && (
+                )) || (page === '/contact' && (
                     <h1 className="hero__title">Contact me</h1>
-                ) || (
+                )) || (
                     <h1 className="hero__title">Page 404</h1>
                 )}
             </div>
@@ -109,5 +122,3 @@ const Hero = ({ page, socialLinks }) => {
         </header>
     );
 };
-
-export default Hero;

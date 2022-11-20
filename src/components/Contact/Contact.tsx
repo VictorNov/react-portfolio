@@ -2,17 +2,32 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 import './Contact.scss';
+import { ISocialLink, IContact } from "../../types";
 import photo from '../../assets/img/about-photo.png';
 
 const randomImage = 'https://source.unsplash.com/300x350/?dark-forest';
 const randomImage2 = 'https://source.unsplash.com/450x320/?architecture,urban';
 
-const Contact = ({ socialLinks, contacts }) => {
-    function encode(data) {
+
+interface ContactProps {
+    socialLinks: ISocialLink[];
+    contacts: IContact[];
+}
+
+type FormValues = {
+    'form-name': string;
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+}
+
+export const Contact: React.FC<ContactProps> = ({ socialLinks, contacts }) => {
+    function encode(data: FormValues) {
         return Object.keys(data)
             .map(
-                (key) =>
-                    encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+                (key: string) =>
+                    encodeURIComponent(key) + '=' + encodeURIComponent(data[key as keyof FormValues])
             )
             .join('&');
     }
@@ -44,7 +59,13 @@ const Contact = ({ socialLinks, contacts }) => {
                     <Formik
                         initialValues={{ email: '', name: '', phone: '', message: '' }}
                         validate={values => {
-                            const errors = {};
+                            const errors: FormValues = {
+                                'form-name': 'contact',
+                                name: '',
+                                email: '',
+                                phone: '',
+                                message: '',
+                            };
                             if ( !values.name ) {
                                 errors.name = 'Required field';
                             } else if (
@@ -176,5 +197,3 @@ const Contact = ({ socialLinks, contacts }) => {
         </main>
     );
 };
-
-export default Contact;

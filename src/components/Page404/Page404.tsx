@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import './Page404.scss';
 
-const Page404 = () => {
+export const Page404: React.FC = () => {
     return (
         <main className="page404__section">
             <h2 className="page404__title">Something went wrong</h2>
@@ -18,5 +18,3 @@ const Page404 = () => {
         </main>
     );
 };
-
-export default Page404;
