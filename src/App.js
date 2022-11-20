@@ -11,7 +11,8 @@ import {
     Contact,
     Footer,
     MobileMenu,
-    ToTop
+    ToTop,
+    Page404,
 } from './components/components';
 import './App.scss';
 
@@ -133,7 +134,7 @@ function App() {
                     />
                 )}/>
                 <Route path="*" element={(
-                    <div>404</div>
+                    <Page404/>
                 )}/>
             </Routes>
             <Footer

@@ -4,8 +4,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import './Contact.scss';
 import photo from '../../assets/img/about-photo.png';
 
-const randomImage = 'https://source.unsplash.com/300x350/?interior';
-const randomImage2 = 'https://source.unsplash.com/350x250/?architecture,urban';
+const randomImage = 'https://source.unsplash.com/300x350/?dark-forest';
+const randomImage2 = 'https://source.unsplash.com/450x320/?architecture,urban';
 
 const Contact = ({ socialLinks, contacts }) => {
     function encode(data) {

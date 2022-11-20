@@ -80,12 +80,12 @@ const Hero = ({ page, socialLinks }) => {
                             Frontend Developer
                         </p>
                     </>
-                )}
-                {page === '/portfolio' && (
+                ) || page === '/portfolio' && (
                     <h1 className="app__hero-title">Portfolio</h1>
-                )}
-                {page === '/contact' && (
+                ) || page === '/contact' && (
                     <h1 className="app__hero-title">Contact me</h1>
+                ) || (
+                    <h1 className="app__hero-title">Page 404</h1>
                 )}
             </div>
             <div className="app__hero-social">
