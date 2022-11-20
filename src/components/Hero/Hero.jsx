@@ -48,7 +48,7 @@ const Hero = ({ page, socialLinks }) => {
                 wingSpan: 40.00,
                 color1: 0x275055,
                 color2: 0x010404,
-                quantity: 2.00,
+                quantity: 1.00,
                 colorMode: 'lerpGradient',
                 backgroundAlpha: 0.00
             }));
@@ -59,39 +59,39 @@ const Hero = ({ page, socialLinks }) => {
     }, [ vantaEffect2 ]);
 
     return (
-        <header className="app__header">
+        <header className="app__hero">
             <div
                 ref={backgroundAnimation}
-                className="app__header-birds"
+                className="app__hero-birds"
             />
             <img
                 src={photo}
                 alt="Victor Novokshenov"
-                className="app__header-img"
+                className="app__hero-img"
             />
-            <div className="app__header-info">
+            <div className="app__hero-info">
                 {page === '/' && (
                     <>
-                        <h1 className="app__header-title">
+                        <h1 className="app__hero-title">
                             Victor<br/>
                             Novokshenov
                         </h1>
-                        <p className="app__header-subtitle">
+                        <p className="app__hero-subtitle">
                             Frontend Developer
                         </p>
                     </>
                 )}
                 {page === '/portfolio' && (
-                    <h1 className="app__header-title">Portfolio</h1>
+                    <h1 className="app__hero-title">Portfolio</h1>
                 )}
                 {page === '/contact' && (
-                    <h1 className="app__header-title">Contact me</h1>
+                    <h1 className="app__hero-title">Contact me</h1>
                 )}
             </div>
-            <div className="app__header-social">
+            <div className="app__hero-social">
                 {socialLinks.map((link, index) => (
                     <a
-                        className="app__header-social-link"
+                        className="app__hero-social-link"
                         key={`hero-social-link-${index}`}
                         href={link.url}
                         rel="noreferrer"
@@ -104,7 +104,7 @@ const Hero = ({ page, socialLinks }) => {
             </div>
             <div
                 ref={backgroundAnimation2}
-                className="app__header-birds"
+                className="app__hero-birds"
             />
         </header>
     );

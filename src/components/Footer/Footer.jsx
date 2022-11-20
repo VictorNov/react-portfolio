@@ -1,90 +1,92 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import './Footer.scss'
+import './Footer.scss';
 
-const randomImage = 'https://source.unsplash.com/1600x400/?technology'
-const randomImageMobile = 'https://source.unsplash.com/768x500/?technology'
+const randomImage = 'https://source.unsplash.com/1600x400/?technology';
+const randomImageMobile = 'https://source.unsplash.com/768x500/?technology';
 
-const Footer = () => {
-  return (
-    <footer className="app__footer">
-      <div className="app__send-message">
-        <img
-          src={window.innerWidth < 768 ? randomImageMobile : randomImage}
-          alt=""
-          className="app__send-message-img"
-        />
+const Footer = ({
+                    contacts,
+                    page,
+                    socialLinks,
+                }) => {
+    return (
+        <footer className="app__footer">
+            {page !== '/contact' && (
+                <div className="app__send-message">
+                    <img
+                        src={window.innerWidth < 768 ? randomImageMobile : randomImage}
+                        alt=""
+                        className="app__send-message-img"
+                    />
 
-        <p className="app__send-message-text">
-          Let's work together to make your next project a success.
-        </p>
+                    <p className="app__send-message-text">
+                        Let's work together to make your next project a success.
+                    </p>
 
-        <Link
-          to='/contact'
-          className="app__send-message-link"
-          onClick={() => {window.scrollTo(0, 0)}}
-        >
-          Send Message
-        </Link>
-      </div>
+                    <Link
+                        to="/contact"
+                        className="app__send-message-link"
+                        onClick={() => {
+                            window.scrollTo(0, 0);
+                        }}
+                    >
+                        Send Message
+                    </Link>
+                </div>
+            )}
 
-      <div className="app__footer-main">
-        <div className="app__footer-info">
-          <div className="app__footer-contacts">
-            <h3>
-              Contact me:
-            </h3>
-            <a href="tel:+77750344636">
-              <i className="ri-phone-line" />
-              +7 (775) 034-46-36 (Kazakhstan)
-            </a>
-            <a href="tel:+38267841859">
-              <i className="ri-phone-line" />
-              +382 (67) 841-859 (Montenegro)
-            </a>
-            <a href="mailto:victornov@bk.ru">
-              <i className="ri-mail-send-line" />
-              victornov@bk.ru
-            </a>
-          </div>
-          <div className="app__footer-social">
-            <h3>
-              My social networks:
-            </h3>
-            <div className="app__footer-social-links">
-              <a href="https://www.facebook.com/victor.nov.31/"
-                 className="app__header-social-link"
-                 rel="noreferrer"
-                 target="_blank"
-              >
-                <i className="ri-facebook-line" />
-              </a>
-              <a href="https://www.instagram.com/victor_nov/"
-                 className="app__header-social-link"
-                 rel="noreferrer"
-                 target="_blank"
-              >
-                <i className="ri-instagram-line" />
-              </a>
-              <a href="https://github.com/VictorNov"
-                 className="app__header-social-link"
-                 rel="noreferrer"
-                 target="_blank"
-              >
-                <i className="ri-github-fill" />
-              </a>
+            <div className="app__footer-main">
+                <div className="app__footer-info">
+                    <div className="app__footer-contacts">
+                        <h3>
+                            Contact me:
+                        </h3>
+                        <ul className="app__footer-contact-links">
+                            {contacts.map((contact, index) => (
+                                <li key={`footer-contact-${index}`}>
+                                    <a
+                                        className="app__footer-contact-link"
+                                        href={contact.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <i className={contact.icon}/>
+                                        {contact.title}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="app__footer-social">
+                        <h3>
+                            My social networks:
+                        </h3>
+                        <ul className="app__footer-social-links">
+                            {socialLinks.map((link, index) => (
+                                <li key={`footer-social-link-${index}`}>
+                                    <a href={link.to}
+                                       className="app__footer-social-link"
+                                       rel="noreferrer"
+                                       target="_blank"
+                                       title={link.name}
+                                    >
+                                        <i className={link.icon}/>
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+                <div className="app__footer-copy">
+                    <p>
+                        &copy; Victor Novokshenov 2022
+                    </p>
+                </div>
             </div>
-          </div>
-        </div>
-        <div className="app__footer-copy">
-          <p>
-            &copy; Victor Novokshenov 2022
-          </p>
-        </div>
-      </div>
-    </footer>
-  )
-}
+        </footer>
+    );
+};
 
-export default Footer
+export default Footer;

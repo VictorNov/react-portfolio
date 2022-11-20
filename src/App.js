@@ -53,6 +53,24 @@ const SOCIAL_LINKS = [
     },
 ];
 
+const CONTACTS = [
+    {
+        title: '+7 (775) 034-46-36 (Kazakhstan)',
+        link: 'tel:+77750344636',
+        icon: 'ri-phone-line',
+    },
+    {
+        title: '+382 (67) 841-859 (Montenegro)',
+        link: 'tel:+38267841859',
+        icon: 'ri-phone-line',
+    },
+    {
+        title: 'victornov@bk.ru',
+        link: 'mailto:victornov@bk.ru',
+        icon: 'ri-mail-send-line',
+    },
+];
+
 function App() {
     const [ isScroll, setIsScroll ] = useState(false);
     const [ isToggle, setIsToggle ] = useState(false);
@@ -115,7 +133,11 @@ function App() {
                     <div>404</div>
                 )}/>
             </Routes>
-            <Footer page={location.pathname}/>
+            <Footer
+                page={location.pathname}
+                socialLinks={SOCIAL_LINKS}
+                contacts={CONTACTS}
+            />
             {isScroll && <ToTop/>}
         </div>
     );
