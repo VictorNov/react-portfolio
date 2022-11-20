@@ -104,7 +104,7 @@
 
 .app__footer-contact-link {
   color: var(--white);
-  font-size: var(--font-lg);
+  font-size: var(--font-md);
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -118,10 +118,6 @@
 
   &:active {
     color: var(--main-color-alt);
-  }
-
-  @media screen and (min-width: 768px) {
-    font-size: var(--font-md);
   }
 }
 
@@ -141,12 +137,8 @@
 
 .app__footer-social-link {
   color: var(--white);
-  font-size: var(--font-2xl);
+  font-size: var(--font-xl);
   transition: color .3s;
-
-  @media screen and (min-width: 768px) {
-    font-size: var(--font-xl);
-  }
 
   &:hover {
     color: var(--main-color);
