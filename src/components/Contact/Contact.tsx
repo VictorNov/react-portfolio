@@ -14,6 +14,13 @@ interface ContactProps {
     contacts: IContact[];
 }
 
+type ErrorValues = {
+    name?: string;
+    email?: string;
+    phone?: string;
+    message?: string;
+}
+
 type FormValues = {
     'form-name': string;
     name: string;
@@ -59,13 +66,7 @@ export const Contact: React.FC<ContactProps> = ({ socialLinks, contacts }) => {
                     <Formik
                         initialValues={{ email: '', name: '', phone: '', message: '' }}
                         validate={values => {
-                            const errors: FormValues = {
-                                'form-name': 'contact',
-                                name: '',
-                                email: '',
-                                phone: '',
-                                message: '',
-                            };
+                            const errors: ErrorValues = {};
                             if ( !values.name ) {
                                 errors.name = 'Required field';
                             } else if (
