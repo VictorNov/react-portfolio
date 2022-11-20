@@ -18,19 +18,19 @@ const Contact = ({ socialLinks, contacts }) => {
     }
 
     return (
-        <main className="app__contact">
+        <main className="contact">
             <h2 className="section-header">Contact me</h2>
-            <div className="app__contacts-wrapper">
-                <div className="app__contacts-block1">
+            <div className="contact__wrapper">
+                <div className="contact__block--1">
                     <img
                         src={randomImage}
                         alt=""
-                        className="images-block-photo-1"
+                        className="contact__block-img--1"
                         width={222}
                         height={259}
                         aria-roledescription="decorative"
                     />
-                    <span className="images-block-photo-2">
+                    <span className="contact__block-img--2">
                         <img
                             src={photo}
                             alt="Victor Novokshenov"
@@ -77,7 +77,7 @@ const Contact = ({ socialLinks, contacts }) => {
                         {({ isSubmitting, status }) => (
                             <>
                                 {!status ? (
-                                    <Form className="app__contacts-form">
+                                    <Form className="contact__form">
                                         <input type="hidden" name="form-name" value="contact"/>
 
                                         <label htmlFor="name">
@@ -127,15 +127,15 @@ const Contact = ({ socialLinks, contacts }) => {
                         )}
                     </Formik>
                 </div>
-                <div className="app__contacts-block3">
+                <div className="contact__block--3">
                     <h3>
                         Or contact me any other way:
                     </h3>
-                    <ul className="app__contacts-list">
+                    <ul className="contact__link-list">
                         {contacts.map((contact, index) => (
                             <li key={`contact-page-link-${index}`}>
                                 <a
-                                    className="app__contacts-link"
+                                    className="contact__link"
                                     href={contact.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -147,11 +147,11 @@ const Contact = ({ socialLinks, contacts }) => {
                             </li>
                         ))}
                     </ul>
-                    <ul className="app__contacts-social-links">
+                    <ul className="contact__social-links">
                         {socialLinks.map((socialLink, index) => (
                             <li key={`contact-page-social-link-${index}`}>
                                 <a
-                                    className="app__contacts-social-link"
+                                    className="contact__social-link"
                                     href={socialLink.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -163,7 +163,7 @@ const Contact = ({ socialLinks, contacts }) => {
                         ))}
                     </ul>
                 </div>
-                <div className="app__contacts-block4">
+                <div className="contact__block--4">
                     <img
                         src={randomImage2}
                         alt=""

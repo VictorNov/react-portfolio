@@ -14,20 +14,20 @@ const Footer = ({
     return (
         <footer className="app__footer">
             {page !== '/contact' && (
-                <div className="app__send-message">
+                <div className="footer__contact-me-block">
                     <img
                         src={window.innerWidth < 768 ? randomImageMobile : randomImage}
                         alt=""
-                        className="app__send-message-img"
+                        className="footer__contact-me-img"
                     />
 
-                    <p className="app__send-message-text">
+                    <p className="footer__contact-me-text">
                         Let's work together to make your next project a success.
                     </p>
 
                     <Link
                         to="/contact"
-                        className="app__send-message-link"
+                        className="footer__contact-me-link"
                         onClick={() => {
                             window.scrollTo(0, 0);
                         }}
@@ -37,17 +37,17 @@ const Footer = ({
                 </div>
             )}
 
-            <div className="app__footer-main">
-                <div className="app__footer-info">
-                    <div className="app__footer-contacts">
+            <div className="footer__main">
+                <div className="footer__info">
+                    <div className="footer__contacts">
                         <h3>
                             Contact me:
                         </h3>
-                        <ul className="app__footer-contact-links">
+                        <ul className="footer__contact-links">
                             {contacts.map((contact, index) => (
                                 <li key={`footer-contact-${index}`}>
                                     <a
-                                        className="app__footer-contact-link"
+                                        className="footer__contact-link"
                                         href={contact.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
@@ -59,15 +59,15 @@ const Footer = ({
                             ))}
                         </ul>
                     </div>
-                    <div className="app__footer-social">
+                    <div className="footer__social">
                         <h3>
                             My social networks:
                         </h3>
-                        <ul className="app__footer-social-links">
+                        <ul className="footer__social-links">
                             {socialLinks.map((link, index) => (
                                 <li key={`footer-social-link-${index}`}>
                                     <a href={link.link}
-                                       className="app__footer-social-link"
+                                       className="footer__social-link"
                                        rel="noreferrer"
                                        target="_blank"
                                        title={link.name}

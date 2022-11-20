@@ -11,23 +11,22 @@ const Navbar = ({
                     navLinks,
                 }) => {
     return (
-        <nav className={`app__navbar${scroll ? ' app__navbar--scroll' : ''}`}>
+        <nav className={`navbar${scroll ? ' navbar--scroll' : ''}`}>
             <Link
                 to="/"
-                className="app__navbar-logo"
+                className="navbar__logo"
                 onClick={() => handleMenuLinkClick()}
             >
                 <span>Victor.N</span>
             </Link>
-            <ul className="app__navbar-links">
+            <ul className="navbar__links">
                 {navLinks.map((link) => (
                     <li key={`Navbar-${link.label}`}>
                         <NavLink
                             to={link.to}
-                            className={
-                                ({ isActive }) =>
-                                    isActive ? 'app__navbar-link active' : 'app__navbar-link'
-                            }
+                            className={({ isActive}) => (
+                                `navbar__link${isActive ? ' navbar__link--active' : ''}`
+                            )}
                             onClick={() => handleMenuLinkClick()}
                         >
                             {link.label}
@@ -37,15 +36,21 @@ const Navbar = ({
             </ul>
             {!isToggle ? (
                 <button
-                    className="app__navbar-toggle"
+                    className="navbar__toggle"
                     onClick={() => setIsToggle(true)}
+                    type="button"
+                    title="Open menu"
+                    aria-label="Open menu"
                 >
                     <i className="ri-menu-line"/>
                 </button>
             ) : (
                 <button
-                    className="app__navbar-toggle"
+                    className="navbar__toggle"
                     onClick={() => setIsToggle(false)}
+                    type="button"
+                    title="Close menu"
+                    aria-label="Close menu"
                 >
                     <i className="ri-close-fill"/>
                 </button>

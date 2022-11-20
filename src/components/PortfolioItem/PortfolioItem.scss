@@ -1,4 +1,4 @@
-.app__project-card {
+.portfolio-item {
   padding: 1rem;
   border: 1px solid var(--light-gray);
 
@@ -20,7 +20,7 @@
   }
 }
 
-.app__project-img {
+.portfolio-item__img {
   overflow: hidden;
   margin-bottom: 1rem;
 
@@ -29,7 +29,7 @@
   }
 }
 
-.app__project-info {
+.portfolio-item__info {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,11 +37,11 @@
   width: 100%;
 }
 
-.app__project-title {
+.portfolio-item__title {
   font-size: 2rem;
 }
 
-.app__project-description {
+.portfolio-item__description {
   margin-bottom: 1.5rem;
 
   p {
@@ -53,7 +53,7 @@
   }
 }
 
-.app__project-tags {
+.portfolio-item__tags {
   align-self: stretch;
   display: flex;
   flex-direction: row;
@@ -64,7 +64,7 @@
   margin-bottom: 1rem;
 }
 
-.app__project-tag {
+.portfolio-item__tag {
   display: flex;
   flex-direction: row;
   background-color: var(--light-gray);
@@ -93,7 +93,7 @@
   }
 }
 
-.app__project-links {
+.portfolio-item__links {
   align-self: stretch;
   display: flex;
   flex-direction: row;
@@ -101,7 +101,7 @@
   align-items: center;
 }
 
-.app__project-link {
+.portfolio-item__link {
   display: flex;
   flex-direction: row;
   align-items: center;

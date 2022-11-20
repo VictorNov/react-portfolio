@@ -57,12 +57,12 @@ const Portfolio = () => {
     };
 
     return (
-        <main className="app__portfolio">
+        <main className="portfolio">
             <h2 className="section-header">Portfolio</h2>
-            <div className="app__portfolio-tags">
+            <div className="portfolio__tags">
                 {allTags?.map(tag => (
                     <button
-                        className={`app__portfolio-tag ${filter === tag.name ? 'active' : ''}`}
+                        className={`portfolio__tag ${filter === tag.name ? 'portfolio__tag--active' : ''}`}
                         key={`all-tags-${tag?.name}`}
                         onClick={() => {
                             filterHandler(tag?.name);
@@ -72,14 +72,14 @@ const Portfolio = () => {
                     </button>
                 ))}
                 <button
-                    className={`app__portfolio-tag ${filter === null ? 'active' : ''}`}
+                    className={`portfolio__tag ${filter === null ? 'portfolio__tag--active' : ''}`}
                     onClick={() => filterHandler(null)}
                 >
                     <i className="ri-price-tag-3-line"/> Show all
                 </button>
             </div>
             {isLoading ? (
-                <div className="app__portfolio-is-loading">
+                <div className="portfolio__loader">
                     <Rings color="#F17A3B"/>
                     <p>
                         Wait a second,<br/>
@@ -88,7 +88,7 @@ const Portfolio = () => {
                 </div>
             ) : (
                 <>
-                    <div className="app__portfolio-items">
+                    <div className="portfolio__items">
                         {portfolioItems?.map((item) => (
                             <PortfolioItem
                                 key={item.name}

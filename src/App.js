@@ -101,7 +101,7 @@ function App() {
     }, [ isToggle ]);
 
     return (
-        <div className="App">
+        <div className="app">
             <Navbar
                 scroll={isScroll}
                 isToggle={isToggle}

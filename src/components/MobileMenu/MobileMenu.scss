@@ -1,4 +1,4 @@
-.app__mobile-menu {
+.mobile-menu {
   position: fixed;
   left: 0;
   width: 100%;
@@ -23,14 +23,14 @@
   }
 }
 
-.app__mobile-menu-links {
+.mobile-menu__links {
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 2rem;
 }
 
-.app__mobile-menu-link {
+.mobile-menu__link {
   font-size: var(--font-xl);
   font-weight: 500;
   color: var(--gray);

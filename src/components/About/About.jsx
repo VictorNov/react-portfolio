@@ -31,36 +31,36 @@ const About = () => {
     }, []);
 
     return (
-        <section className="app__about">
+        <section className="about">
             <h2 className="section-header">About Me</h2>
-            <div className="app__about-wrapper">
-                <div className="app__about-img-wrapper">
+            <div className="about__wrapper">
+                <div className="about__img-wrapper">
                     <img
                         src={aboutPhoto}
                         alt="Victor Novokshenov"
-                        className="app__about-img"
+                        className="about__img"
                     />
                 </div>
-                <div className="app__about-text">
+                <div className="about__text">
                     <PortableText value={textBlocks}/>
                 </div>
             </div>
-            <h3 className="app__about-title">
+            <h3 className="about__title">
                 I have experience with the following technologies:
             </h3>
-            <ul className="app__about-skills">
+            <ul className="about__skills">
                 {skills.map((skill, i) => (
                     <li
-                        className="app__about-skill"
+                        className="about__skill"
                         key={`skill-${i}`}
                     >
-                        <div className="app__about-skill-img"
+                        <div className="about__skill-img"
                              style={{ backgroundColor: skill.bgColor }}>
                             <img src={urlFor(skill.image)
                                 .width(150)
                                 .url()} alt={skill.name}/>
                         </div>
-                        <span className="app__about-skill-title">{skill.name}</span>
+                        <span className="about__skill-title">{skill.name}</span>
                     </li>
                 ))}
             </ul>

@@ -1,10 +1,10 @@
-.app__about {
+.about {
   max-width: 900px;
   padding: 3.5rem 1.5rem;
   margin: 0 auto;
 }
 
-.app__about-wrapper {
+.about__wrapper {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -17,11 +17,11 @@
   }
 }
 
-.app__about-img {
+.about__img {
   width: 100%;
 }
 
-.app__about-img-wrapper{
+.about__img-wrapper{
   position: relative;
   width: 180px;
 
@@ -43,7 +43,7 @@
   }
 }
 
-.app__about-text {
+.about__text {
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
@@ -58,12 +58,12 @@
   }
 }
 
-.app__about-title {
+.about__title {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-.app__about-skills {
+.about__skills {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   gap: 2.5rem;
@@ -71,7 +71,7 @@
   margin: 0 auto;
 }
 
-.app__about-skill {
+.about__skill {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,17 +82,17 @@
   &:hover {
     transform: scale(1.1);
     
-    .app__about-skill-img {
+    .about__skill-img {
       box-shadow: 0 0 10px #00000044;
     }
 
-    .app__about-skill-title {
+    .about__skill-title {
       transform: translateY(-5px);
     }
   }
 }
 
-.app__about-skill-img {
+.about__skill-img {
   width: 100px;
   height: 100px;
   padding: 1.2rem;
@@ -109,7 +109,7 @@
   }
 }
 
-.app__about-skill-title {
+.about__skill-title {
   font-weight: bold;
   transition: transform .3s;
   transform: translateY(0);

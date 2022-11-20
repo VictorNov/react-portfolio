@@ -1,4 +1,4 @@
-.app__navbar {
+.navbar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -28,7 +28,7 @@
   }
 }
 
-.app__navbar-logo {
+.navbar__logo {
   font-family: 'Montserrat Alternates', sans-serif;
   font-size: var(--font-xl);
   text-decoration: none;
@@ -39,7 +39,7 @@
   }
 }
 
-.app__navbar-links {
+.navbar__links {
   display: flex;
   flex-direction: row;
   column-gap: 3rem;
@@ -49,7 +49,7 @@
   }
 }
 
-.app__navbar-link {
+.navbar__link {
   position: relative;
   text-decoration: none;
   color: var(--black);
@@ -71,12 +71,12 @@
     width: 1.5rem;
   }
 
-  &.active::before {
+  &--active::before {
     width: 1.5rem;
   }
 }
 
-.app__navbar-toggle {
+.navbar__toggle {
   font-size: 1.5rem;
   line-height: 1.5rem;
   cursor: pointer;

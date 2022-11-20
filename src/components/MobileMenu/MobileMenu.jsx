@@ -9,13 +9,13 @@ const MobileMenu = ({
                         navLinks,
                     }) => {
     return (
-        <nav className={`app__mobile-menu${isToggle ? ' toggle' : ''}`}>
-            <ul className="app__mobile-menu-links">
+        <nav className={`mobile-menu${isToggle ? ' toggle' : ''}`}>
+            <ul className="mobile-menu__links">
                 {navLinks.map((link) => (
                     <li key={`MobileMenu-${link.label}`}>
                         <Link
                             to={link.to}
-                            className="app__mobile-menu-link"
+                            className="mobile-menu__link"
                             onClick={() => handleMenuLinkClick()}
                         >
                             {link.label}
